@@ -34,14 +34,28 @@
 }
 
 .header-bottom {
+	
+	width: 100%;
 	height: $header-bottom-height;
+	padding: 31.5px 0 31.5px 0;
 }
-
 
 .header-top,
 .header-bottom {
 	display: flex;
 	justify-content: space-between;
+}
+
+.nav-header {
+	@include center-flex;
+	width: 1259px;
+	height: 24px;
+	background-color: firebrick;
+}
+.search {
+	width: 24px;
+	height: 24px;
+	background-image: url('../');
 }
 
 .logo {
