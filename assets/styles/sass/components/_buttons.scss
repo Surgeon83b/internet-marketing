@@ -1,0 +1,23 @@
+button {
+    border-radius: 100px;
+    border: 1px solid $button-default;
+    padding: 16px 28px;
+    background-color: white;
+}
+
+.button-caption {
+    @include center-flex;
+    color: $button-default;
+    font-weight: 500;
+    font-size: $text-font-size;
+}
+
+.phone-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url($phone-icon);
+}
+
+.call-button {
+    width: 222px;
+}

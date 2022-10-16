@@ -1,0 +1,12 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+body {
+    @include font;
+    width: $body-width;
+    max-width: $body-width;
+}
+.wrapper {
+	width: $wrapper-width;
+	margin: auto;
+}

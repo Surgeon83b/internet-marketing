@@ -1,5 +1,6 @@
 @import '../abstracts/variables';
 @import '../abstracts/colors';
+@import '../abstracts/mixins';
 
 .header-section {
 	width: 100%;
@@ -12,22 +13,24 @@
 }
 
 .header {
+	
 	width: 100%;
 	height: $header-height;
-	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	background-color: $header-background;
 
-	div {
-		display: flex;
-		background-color: lightpink;
-	}
 }
 
 .header-top {
+	@include center-flex;
+	width: 100%;
 	height: $header-top-height;
 	margin-top: 26px;
+	.caption {
+		font-size: $caption-font-size;
+		font-weight: $caption-font-weight;
+		color: $color-typography;
+	}
 }
 
 .header-bottom {
@@ -41,23 +44,46 @@
 	justify-content: space-between;
 }
 
-.wrapper {
-	width: $wrapper-width;
-	margin: auto;
-}
-
 .logo {
-	width: 185px;
+	display: flex;
+	justify-content: space-between;
+	width: 198.5px;
 	height: 48px;
 }
 
 .logo-image {
 	width: 43px;
 	height: 48px;
-	background-image: url(../../images/logo.png);
+	background-image: url($logo-filename);
 }
 
 .logo-text {
+	width: 142px;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.logo-text1 {
+	width: 128.6px;
+	height: 24.5px;
+	background-image: url($logo-text1);
+}
+.logo-text2 {
+	width: 124px;
+	height: 8.5px;
+	background-image: url($logo-text2);
+}
+
+.phone {
+	width: 150px;
+	height: 20px;
+	font-weight: 600;
+	font-size: $text-font-size;
+}
+
+.contact-us {
+	@include center-flex;
+	width: $contact-us-width;
 }
