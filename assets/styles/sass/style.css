@@ -250,11 +250,13 @@ body {
 .header-section {
   width: 100%;
   max-width: 1600px;
-  height: 900px;
+  height: 56.25vw;
+  max-height: 900px;
   background-image: url("../../images/header-background.png");
   background-position: top 184px center;
   background-size: contain;
   background-repeat: no-repeat;
+  margin-bottom: 120px;
 }
 
 .header {
@@ -384,12 +386,41 @@ body {
   height: 20px;
 }
 
-.header-caption {
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: start;
+  flex-direction: column;
   width: 780px;
   height: 336px;
   margin-left: 200px;
   margin-top: 170px;
-  background-color: aqua;
+  background-color: transparent;
+  color: white;
+}
+.header-info .caption {
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 110%;
+}
+.header-info .info {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: -22px;
+  line-height: 140%;
+}
+.header-info .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 735px;
+  height: 62px;
+  color: white;
+  font-weight: 500;
+}
+.header-info .buttons .button-caption {
+  color: white;
+  font-size: 18px;
 }
 
 .footer {
@@ -414,6 +445,7 @@ button {
   color: #FF5900;
   font-weight: 500;
   font-size: 16px;
+  align-items: center;
 }
 
 .phone-icon {
@@ -424,4 +456,80 @@ button {
 
 .call-button {
   width: 222px;
+}
+
+.button-filled {
+  background-color: #FF5900;
+}
+
+.button-transparent {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #FFFFFF;
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+}
+
+.button1 {
+  width: 362px;
+  padding: 20px 39px;
+}
+.button1 .button-caption {
+  width: 282px;
+}
+
+.button2 {
+  width: 341px;
+  padding: 20px 39px;
+}
+.button2 .button-caption {
+  width: 261px;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 1200px;
+  height: 593px;
+  background-color: aqua;
+  margin: auto;
+}
+.section1 .caption {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 120%;
+  color: #212121;
+}
+.section1 .caption span {
+  color: #FF5900;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 120%;
+}
+.section1 .main-content {
+  width: 100%;
+  height: 487px;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: space-between;
+}
+.section1 .main-content .main-item {
+  width: 30%;
+  height: 100%;
+  padding: 40px 32px;
+}
+.section1 .main-content .main-item .wrapper {
+  width: 82.22%;
+  height: 83.57%;
+  background: none;
+}
+.section1 .main-content :nth-child(1) {
+  background-image: url("../../images/item1.png");
+}
+.section1 .main-content :nth-child(2) {
+  background-image: url("../../images/item2.png");
+}
+.section1 .main-content :nth-child(3) {
+  background-image: url("../../images/item3.png");
 }/*# sourceMappingURL=style.css.map */
