@@ -1,0 +1,7 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+.footer {
+    height: $footer-height;
+    background-color: $footer-background;
+}

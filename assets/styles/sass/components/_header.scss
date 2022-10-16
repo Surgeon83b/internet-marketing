@@ -1,0 +1,63 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+.header-section {
+	width: 100%;
+	max-width: $header-section-width;
+	height: $header-section-height;
+	background-image: url('../../images/header-background.png');
+	background-position: bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.header {
+	width: 100%;
+	height: $header-height;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: $header-background;
+
+	div {
+		display: flex;
+		background-color: lightpink;
+	}
+}
+
+.header-top {
+	height: $header-top-height;
+	margin-top: 26px;
+}
+
+.header-bottom {
+	height: $header-bottom-height;
+}
+
+
+.header-top,
+.header-bottom {
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrapper {
+	width: $wrapper-width;
+	margin: auto;
+}
+
+.logo {
+	width: 185px;
+	height: 48px;
+}
+
+.logo-image {
+	width: 43px;
+	height: 48px;
+	background-image: url(../../images/logo.png);
+}
+
+.logo-text {
+	display: flex;
+	flex-direction: column;
+}
