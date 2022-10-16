@@ -3,7 +3,7 @@
 
 body {
     @include font;
-    width: $body-width;
+    width: 100%;
     max-width: $body-width;
 }
 .wrapper {

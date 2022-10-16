@@ -7,13 +7,13 @@
 	max-width: $header-section-width;
 	height: $header-section-height;
 	background-image: url('../../images/header-background.png');
-	background-position: bottom;
+	background-position: top 184px center;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 .header {
-	
+
 	width: 100%;
 	height: $header-height;
 	flex-direction: column;
@@ -22,22 +22,49 @@
 }
 
 .header-top {
-	@include center-flex;
+
 	width: 100%;
 	height: $header-top-height;
-	margin-top: 26px;
+
 	.caption {
 		font-size: $caption-font-size;
 		font-weight: $caption-font-weight;
 		color: $color-typography;
+		margin-left: 39px;
+	}
+
+	.wrapper {
+		@include center-flex;
+		width: $wrapper-width;
+		height: 52px;
 	}
 }
 
 .header-bottom {
-	
 	width: 100%;
 	height: $header-bottom-height;
-	padding: 31.5px 0 31.5px 0;
+	padding: 28px 0 28px 0;
+	border-width: 1px 0px;
+	border-style: solid;
+	border-color: rgba(51, 51, 51, 0.1);
+
+	.wrapper {
+		@include center-flex;
+		width: $wrapper-width;
+		height: 24px;
+	}
+}
+
+.nav-menu {
+	width: 100%;
+	@include center-flex;
+
+	li {
+		display: inline;
+		font-weight: 500;
+		font-size: $caption-font-size;
+		color: $color-typography;
+	}
 }
 
 .header-top,
@@ -47,15 +74,18 @@
 }
 
 .nav-header {
-	@include center-flex;
+
 	width: 1259px;
 	height: 24px;
 	background-color: firebrick;
+	align-items: center;
 }
+
 .search {
+	display: inline;
 	width: 24px;
 	height: 24px;
-	background-image: url('../');
+	background-image: url('../../images/search.png');
 }
 
 .logo {
@@ -82,8 +112,10 @@
 .logo-text1 {
 	width: 128.6px;
 	height: 24.5px;
+	margin-bottom: 4px;
 	background-image: url($logo-text1);
 }
+
 .logo-text2 {
 	width: 124px;
 	height: 8.5px;
@@ -100,4 +132,16 @@
 .contact-us {
 	@include center-flex;
 	width: $contact-us-width;
+}
+.button-caption {
+	width: 166px;
+	height: 20px;
+}
+
+.header-caption {
+	width: 780px;
+	height: 336px;
+	margin-left: 200px;
+	margin-top: 170px;
+	background-color: aqua;
 }

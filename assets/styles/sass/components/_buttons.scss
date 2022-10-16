@@ -1,4 +1,7 @@
 button {
+    font-family: $font-family;
+    font-style: $font-style;
+    display: flex;
     border-radius: 100px;
     border: 1px solid $button-default;
     padding: 16px 28px;

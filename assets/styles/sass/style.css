@@ -238,7 +238,7 @@ input[type=button] {
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  width: 1600px;
+  width: 100%;
   max-width: 1600px;
 }
 
@@ -252,7 +252,7 @@ body {
   max-width: 1600px;
   height: 900px;
   background-image: url("../../images/header-background.png");
-  background-position: bottom;
+  background-position: top 184px center;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -265,27 +265,70 @@ body {
 }
 
 .header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  height: 52px;
-  margin-top: 26px;
+  height: 104px;
 }
 .header-top .caption {
   font-size: 14px;
   font-weight: 400;
   color: #212121;
+  margin-left: 39px;
+}
+.header-top .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  height: 52px;
 }
 
 .header-bottom {
+  width: 100%;
   height: 80px;
+  padding: 28px 0 28px 0;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: rgba(51, 51, 51, 0.1);
+}
+.header-bottom .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  height: 24px;
+}
+
+.nav-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-menu li {
+  display: inline;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
 }
 
 .header-top,
 .header-bottom {
   display: flex;
   justify-content: space-between;
+}
+
+.nav-header {
+  width: 1259px;
+  height: 24px;
+  background-color: firebrick;
+  align-items: center;
+}
+
+.search {
+  display: inline;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../images/search.png");
 }
 
 .logo {
@@ -312,6 +355,7 @@ body {
 .logo-text1 {
   width: 128.6px;
   height: 24.5px;
+  margin-bottom: 4px;
   background-image: url("../../images/logo1-text.svg");
 }
 
@@ -335,12 +379,28 @@ body {
   width: 410px;
 }
 
+.button-caption {
+  width: 166px;
+  height: 20px;
+}
+
+.header-caption {
+  width: 780px;
+  height: 336px;
+  margin-left: 200px;
+  margin-top: 170px;
+  background-color: aqua;
+}
+
 .footer {
   height: 583px;
   background-color: #333333;
 }
 
 button {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  display: flex;
   border-radius: 100px;
   border: 1px solid #FF5900;
   padding: 16px 28px;
