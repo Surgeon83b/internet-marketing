@@ -1,4 +1,5 @@
 const phoneNumber = '+7 (4872) 79-29-10';
+const imagePrefix = '../../assets/images';
 const navItems = [
 	'УВЕЛИЧЕНИЕ ПРОДАЖ',
 	'СОЗДАНИЕ САЙТОВ',
@@ -31,6 +32,16 @@ const digitalPackages = [
 	},
 ]
 
+const clients = [
+	'oriflame',
+	'consultant',
+	'shar',
+	'uralsib',
+	'vostochny',
+	'kvadrum',
+	'skoda',
+	'zolotoy',
+]
 
 const footerNavigation = [
 	{
@@ -51,7 +62,7 @@ const footerNavigation = [
 		]
 	},
 	{
-		name: `РАЗРАБОТКА И ПОДДЕРЖКА САЙТОВ`,
+		name: `РАЗРАБОТКА</br> И ПОДДЕРЖКА САЙТОВ`,
 		info: [
 			'Разработка',
 			'На 1С-Битрикс',
@@ -65,7 +76,7 @@ const footerNavigation = [
 		]
 	},
 	{
-		name: `КОМПАНИЯ "ДОМ САЙТОВ"`,
+		name: `КОМПАНИЯ</br> "ДОМ САЙТОВ"`,
 		info: [
 			'Клиенты и отзывы',
 			'Контакты',
@@ -85,8 +96,8 @@ const regions = [
 		city: 'Тула',
 		phone: `+7 (495) 223-66-59`,
 		address: `г. Тула, ул. Пушкинская, 27`,
-		INN: `123456789`,
-		OGRN: `123456789010`,
+		INN: `ИНН 123456789`,
+		OGRN: `ОГРН 123456789010`,
 	},
 ];
 
@@ -239,16 +250,103 @@ for (let i = 0; i < 3; i++) {
 }
 
 ///////////////////////////////////////////////
+///////////////////  CLIENTS  /////////////////
+///////////////////////////////////////////////
+
+const clientsSection = document.createElement('section');
+clientsSection.classList.add('clients');
+const clientsCaption = document.createElement('div');
+clientsCaption.classList.add('caption');
+clientsCaption.innerHTML = 'Наши клиенты';
+clientsSection.append(clientsCaption);
+
+const clientItems = document.createElement('div');
+clientItems.classList.add('items');
+
+for (let i = 0; i < 8; i++) {
+	clientItems.insertAdjacentHTML("beforeend",
+		`<div class="item"></div>`);
+	clientItems.children[i].style.backgroundImage = `url(${imagePrefix}/clients/${clients[i]}.svg)`;
+	//clientItems.children[i].style.backgroundImage = 
+}
+
+clientsSection.append(clientItems);
+
+section1.insertAdjacentElement("afterend", clientsSection);
+
+
+
+///////////////////////////////////////////////
 ///////////////////  FOOTER  //////////////////
 ///////////////////////////////////////////////
 
-footerWrapper = document.createElement('div');
+const footerWrapper = document.createElement('div');
 footerWrapper.classList.add('wrapper');
+const mainFooter = document.createElement('div');
+mainFooter.classList.add('main-footer');
 footer.prepend(footerWrapper);
 
+footerWrapper.insertAdjacentElement("beforeend", mainFooter);
 footerWrapper.insertAdjacentHTML("beforeend",
 	`<div class="bottom-footer">
 	 <div>${bottomFooter.left}</div>
 	<div>${bottomFooter.right}</div>
 	</div>`
 )
+
+mainFooter.insertAdjacentHTML("afterbegin",
+	`<div class="about">
+					<div class="logo">
+						<div class="logo-image white"></div>
+						<div class="logo-text">
+							<div class="logo-text1 white"></div>
+							<div class="logo-text2 white"></div>
+						</div>
+					</div>
+					<div class="contact-info">
+						<div class="region">
+							<span class="region">Ваш регион: </span><span class="city">${regions[0].city}</span>
+						</div>
+						<div class="contacts">
+							<div class="phone">${regions[0].phone}</div>
+							<div class="address">${regions[0].address}</div>
+						</div>
+						<div class="bank-data">
+							<span class="INN">${regions[0].INN}</span></br>
+							<span class="OGRN">${regions[0].OGRN}</span>
+						</div>
+					</div>
+					<div class="social">
+						<div class="vk"></div>
+						<div class="telegram"></div>
+					</div>
+				</div >`
+);
+
+const footerMenu = document.createElement('div');
+footerMenu.classList.add('footer-menu');
+
+mainFooter.insertAdjacentElement("beforeend", footerMenu);
+
+for (let i = 0; i < 3; i++) {
+	let menuColumn = document.createElement('div');
+	menuColumn.classList.add('menu-column');
+
+	let columnHeader = document.createElement('div');
+	columnHeader.classList.add('column-header');
+	columnHeader.innerHTML = footerNavigation[i].name;
+
+	menuColumn.insertAdjacentElement("afterbegin", columnHeader);
+
+	let columnItems = document.createElement('ul');
+	columnItems.classList.add('column-items');
+	for (let j = 0; j < footerNavigation[i].info.length; j++) {
+		columnItems.insertAdjacentHTML("beforeend",
+			`<li><a>${footerNavigation[i].info[j]}</a></li>`
+		)
+	}
+
+	menuColumn.insertAdjacentElement("beforeend", columnItems);
+
+	footerMenu.insertAdjacentElement("beforeend", menuColumn);
+}

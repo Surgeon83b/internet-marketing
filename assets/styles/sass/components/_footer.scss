@@ -12,9 +12,8 @@
 		position: relative;
 		top: 100px;
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
-		align-items: top;
-		background-color: aqua;
 		box-sizing: border-box;
 	}
 }
@@ -27,21 +26,27 @@
 		@include left-column-flex;
 		width: 193px;
 		height: 325px;
-		opacity: 1;
 
 		.contact-info {
 			@include left-column-flex;
 			height: 152px;
-
+			color: $light;
 			.city,
 			.phone,
 			.address {
 				font-size: $caption-font-size;
-				color: $light;
 				font-style: normal;
 				font-weight: 500;
 				line-height: 170%;
-				opacity: 1;
+			}
+
+			span {
+				&.region,
+				&.INN,
+				&.OGRN {
+					font-size: $caption-font-size;
+					opacity: 0.5;
+				}
 			}
 
 			.city {
@@ -74,7 +79,7 @@
 .footer-menu {
 	width: $footer-menu-width;
 	display: grid;
-	grid-template-columns: repeat(3, 228px);
+	grid-template-columns: 228px 210px 188px;
 	grid-template-rows: repeat(1, 352px);
 	column-gap: calc(100% * 100% * 107px / ($footer-menu-width * $wrapper-width));
 }
@@ -82,13 +87,13 @@
 .menu-column {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	background-color: brown;
+	justify-content: start;
 	font-size: $caption-font-size;
 	color: $light;
 }
 
 .column-header {
+	margin-bottom: 24px;
 	line-height: 140%;
 	opacity: 0.5;
 }
@@ -102,9 +107,11 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-end;
 	height: 35px;
 	font-size: 12px;
 	line-height: 120%;
-	color: black;
+	color: $light;
 	opacity: 0.3;
+	border-top: 1px solid;
 }
