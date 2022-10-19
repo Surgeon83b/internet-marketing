@@ -2,6 +2,109 @@
 @import '../abstracts/colors';
 
 .footer {
-    height: $footer-height;
-    background-color: $footer-background;
+	height: $footer-height;
+	background-color: $footer-background;
+	margin: auto;
+
+	.wrapper {
+		width: $wrapper-width;
+		height: 467px;
+		position: relative;
+		top: 100px;
+		display: flex;
+		justify-content: space-between;
+		align-items: top;
+		background-color: aqua;
+		box-sizing: border-box;
+	}
+}
+
+.main-footer {
+	display: flex;
+	justify-content: space-between;
+
+	.about {
+		@include left-column-flex;
+		width: 193px;
+		height: 325px;
+		opacity: 1;
+
+		.contact-info {
+			@include left-column-flex;
+			height: 152px;
+
+			.city,
+			.phone,
+			.address {
+				font-size: $caption-font-size;
+				color: $light;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 170%;
+				opacity: 1;
+			}
+
+			.city {
+				text-decoration: underline;
+			}
+		}
+
+		.social {
+			width: $social-width;
+			height: $social-height;
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				width: 40px;
+				height: 40px;
+			}
+
+			.vk {
+				background-image: url($vk);
+			}
+
+			.telegram {
+				background-image: url($telegram);
+			}
+		}
+	}
+}
+
+.footer-menu {
+	width: $footer-menu-width;
+	display: grid;
+	grid-template-columns: repeat(3, 228px);
+	grid-template-rows: repeat(1, 352px);
+	column-gap: calc(100% * 100% * 107px / ($footer-menu-width * $wrapper-width));
+}
+
+.menu-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: brown;
+	font-size: $caption-font-size;
+	color: $light;
+}
+
+.column-header {
+	line-height: 140%;
+	opacity: 0.5;
+}
+
+.column-items {
+	line-height: 170%;
+
+}
+
+.bottom-footer {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	height: 35px;
+	font-size: 12px;
+	line-height: 120%;
+	color: black;
+	opacity: 0.3;
 }

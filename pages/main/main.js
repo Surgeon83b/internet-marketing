@@ -1,14 +1,104 @@
 const phoneNumber = '+7 (4872) 79-29-10';
 const navItems = [
-    'УВЕЛИЧЕНИЕ ПРОДАЖ',
-    'СОЗДАНИЕ САЙТОВ',
-    'ПОДДЕРЖКА',
-    'БИТРИКС 24',
-    'О КОМПАНИИ',
-    'ОТЗЫВЫ',
-    'КЕЙСЫ',
-    'КОНТАКТЫ'
+	'УВЕЛИЧЕНИЕ ПРОДАЖ',
+	'СОЗДАНИЕ САЙТОВ',
+	'ПОДДЕРЖКА',
+	'БИТРИКС 24',
+	'О КОМПАНИИ',
+	'ОТЗЫВЫ',
+	'КЕЙСЫ',
+	'КОНТАКТЫ'
 ]
+
+const digitalPackages = [
+	{
+		name: 'СТАБИЛЬНАЯ ЛИДОГЕНЕРАЦИЯ В КРИЗИС',
+		info: `SEO-продвижение +</br>Контекстная реклама`,
+		additional: `Ищете сплит каналов для</br> стабильного лидгена?</br>Нет ничего надежнее классики!`,
+		bonus: `Специальная скидка до <span class="bolder">40%</span></br> на каждую услугу в пакете`,
+	},
+	{
+		name: `УСИЛЕНИЕ</br> ЛИДОГЕНЕРАЦИИ В КРИЗИС`,
+		info: `SEO-продвижение +</br>Управление репутацией`,
+		additional: `Добавьте к классическому продвижению работу с профильными площадками и отзовиками.`,
+		bonus: `Специальная скидка до <span class="bolder">40%</span></br> на каждую услугу в пакете`,
+	},
+	{
+		name: `АНТИБЛОКИРОВКА</br> В СОЦСЕТЯХ`,
+		info: `SEO-продвижение +</br>Таргет + Маркетплейсы`,
+		additional: `Основные каналы лидгена попали</br> под блокировку?</br>У нас уже есть работающее решение.`,
+		bonus: `Специальная скидка до <span class="bolder">20%</span></br> на каждую услугу в пакете`,
+	},
+]
+
+
+const footerNavigation = [
+	{
+		name: `УВЕЛИЧЕНИЕ ПРОДАЖ ДЛЯ ВАШЕГО БИЗНЕСА`,
+		info: [
+			'SEO',
+			'Тариф "Трафик"',
+			'Тариф "Объем работ"',
+			'Тариф "Лиды / CPA"',
+			'Тариф "SEO + Контекст"',
+			'Комплексное SEO',
+			'Для интернет-магазина',
+			'Продвижение в Яндекс',
+			'Продвижение в Google',
+			'Разовые работы',
+			'SEO-аудит сайтов',
+			'Вывод из-под санкций',
+		]
+	},
+	{
+		name: `РАЗРАБОТКА И ПОДДЕРЖКА САЙТОВ`,
+		info: [
+			'Разработка',
+			'На 1С-Битрикс',
+			'На WordPress',
+			'На Tilda',
+			'Сайт-визитка',
+			'Интернет-магазин',
+			'Проектирование',
+			'Поддержка сайтов',
+			'Внесение дорабток',
+		]
+	},
+	{
+		name: `КОМПАНИЯ "ДОМ САЙТОВ"`,
+		info: [
+			'Клиенты и отзывы',
+			'Контакты',
+			'Работа в Demis Group',
+			'Личный кабинет',
+			'Статьи',
+			'Публичная оферта',
+			'Партнерская программа',
+			'Гарантии',
+			'Внесение дорабток',
+		]
+	}
+]
+
+const regions = [
+	{
+		city: 'Тула',
+		phone: `+7 (495) 223-66-59`,
+		address: `г. Тула, ул. Пушкинская, 27`,
+		INN: `123456789`,
+		OGRN: `123456789010`,
+	},
+];
+
+bottomFooter = {
+	left:
+		`© 2008-2022 Компания	«ДОМ САЙТОВ»`,
+	right:
+		`<a>Карта сайта</a> | <a>Политика конфиденциальности</a`
+}
+
+
+
 let headerSection = document.createElement('div');
 headerSection.classList.add('header-section');
 
@@ -97,21 +187,68 @@ navMenu.classList.add('nav-menu');
 headerBottom.append(headerBottomWrapper);
 headerBottomWrapper.append(navHeader);
 navHeader.append(navMenu);
-for (let i=0; i<8;i++) {
-    let menuItem = document.createElement('li');
-    menuItem.innerHTML = navItems[i];
-    navMenu.append(menuItem);
+for (let i = 0; i < 8; i++) {
+	let menuItem = document.createElement('li');
+	menuItem.innerHTML = navItems[i];
+	navMenu.append(menuItem);
 }
 let menuItem = document.createElement('li');
 menuItem.classList.add('search');
 navMenu.append(menuItem);
 
-
+///////////////////////////////////////////////
+////////////////  SECTION 1  //////////////////
+///////////////////////////////////////////////
 
 const section1Caption = document.createElement('div');
 section1Caption.classList.add('caption');
 const section1MainContent = document.createElement('div');
 section1MainContent.classList.add('main-content');
 
-section1.prepend(section1Caption);
-section1Caption.after(section1MainContent);
+headerSection.after(section1);
+section1.insertAdjacentHTML("afterbegin", `<div class="caption">
+    <span>Антикризисные</span>
+    DIGITAL-пакеты
+</div>`
+);
+
+section1.append(section1MainContent);
+
+for (let i = 0; i < 3; i++) {
+	section1MainContent.insertAdjacentHTML("beforeend",
+		`<div class="main-item">
+		<div class="wrapper">
+			<div class="item-caption">
+				${digitalPackages[i].name}
+			</div>
+			<div class="item1">
+				${digitalPackages[i].info}
+			</div>
+			<div class="item2">
+				${digitalPackages[i].additional}
+			</div>
+			<div class="item3">
+				${digitalPackages[i].bonus}
+			</div>
+			<button class="buy">
+				Приобрести пакет
+			</button>
+		</div>
+	</div>`
+	)
+}
+
+///////////////////////////////////////////////
+///////////////////  FOOTER  //////////////////
+///////////////////////////////////////////////
+
+footerWrapper = document.createElement('div');
+footerWrapper.classList.add('wrapper');
+footer.prepend(footerWrapper);
+
+footerWrapper.insertAdjacentHTML("beforeend",
+	`<div class="bottom-footer">
+	 <div>${bottomFooter.left}</div>
+	<div>${bottomFooter.right}</div>
+	</div>`
+)
