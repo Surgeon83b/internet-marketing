@@ -148,7 +148,7 @@ headerTop.prepend(headerTopWrapper);
 
 const headerTopLogo = document.createElement('div');
 headerTopLogo.classList.add('logo');
-const headerTopCaption = document.createElement('div');
+const headerTopCaption = document.createElement('h2');
 headerTopCaption.classList.add('caption');
 headerTopCaption.innerHTML = 'Увеличиваем продажи в Вашем бизнесе!';
 const headerTopContactUs = document.createElement('div');
@@ -217,8 +217,6 @@ navMenu.append(menuItem);
 ////////////////  SECTION 1  //////////////////
 ///////////////////////////////////////////////
 
-const section1Caption = document.createElement('div');
-section1Caption.classList.add('caption');
 const section1MainContent = document.createElement('div');
 section1MainContent.classList.add('main-content');
 const section1Wrapper = document.createElement('div');
@@ -226,10 +224,10 @@ section1Wrapper.classList.add('wrapper');
 
 headerSection.after(section1);
 section1.append(section1Wrapper);
-section1Wrapper.insertAdjacentHTML("afterbegin", `<div class="caption">
+section1Wrapper.insertAdjacentHTML("afterbegin", `<h1 class="caption">
     <span>Антикризисные</span>
     DIGITAL-пакеты
-</div>`
+</h1>`
 );
 
 section1Wrapper.append(section1MainContent);
@@ -238,9 +236,9 @@ for (let i = 0; i < 3; i++) {
 	section1MainContent.insertAdjacentHTML("beforeend",
 		`<div class="main-item">
 		<div class="wrapper">
-			<div class="item-caption">
+			<h2 class="item-caption">
 				${digitalPackages[i].name}
-			</div>
+			</h2>
 			<div class="item1">
 				${digitalPackages[i].info}
 			</div>
@@ -264,7 +262,7 @@ for (let i = 0; i < 3; i++) {
 
 const clientsSection = document.createElement('section');
 clientsSection.classList.add('clients');
-const clientsCaption = document.createElement('div');
+const clientsCaption = document.createElement('h2');
 clientsCaption.classList.add('caption');
 clientsCaption.innerHTML = 'Наши клиенты';
 clientsSection.append(clientsCaption);
@@ -341,7 +339,7 @@ for (let i = 0; i < 3; i++) {
 	let menuColumn = document.createElement('div');
 	menuColumn.classList.add('menu-column');
 
-	let columnHeader = document.createElement('div');
+	let columnHeader = document.createElement('h2');
 	columnHeader.classList.add('column-header');
 	columnHeader.innerHTML = footerNavigation[i].name;
 
