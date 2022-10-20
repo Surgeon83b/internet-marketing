@@ -1,0 +1,21 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+body {
+    @include font;
+    width: 100%;
+    max-width: $body-width;
+    margin: auto;
+    overflow-x: hidden;
+    a {
+        color: $light;
+        text-decoration: none;
+    }
+    
+}
+.wrapper {
+    width: 100%;
+	max-width: $wrapper-width;
+	margin: auto;
+}
+

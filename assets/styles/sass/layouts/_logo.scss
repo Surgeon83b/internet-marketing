@@ -1,0 +1,46 @@
+.logo {
+  display: flex;
+  justify-content: space-between;
+  width: 198.5px;
+  height: 48px;
+  opacity: 1;
+}
+
+.logo-image {
+  width: 43px;
+  height: 48px;
+  background-image: url($logo-filename);
+
+  &.white {
+    background-image: url($logo-white-filename);
+  }
+}
+
+.logo-text {
+  width: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.logo-text1 {
+  width: 128.6px;
+  height: 24.5px;
+  margin-bottom: 4px;
+  background-image: url($logo-text1);
+
+  &.white {
+    background-image: url($logo-text1-white);
+  }
+}
+
+.logo-text2 {
+  width: 124px;
+  height: 8.5px;
+  background-image: url($logo-text2);
+
+  &.white {
+    background-image: url($logo-text2-white);
+  }
+}

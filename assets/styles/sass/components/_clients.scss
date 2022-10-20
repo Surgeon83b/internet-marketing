@@ -1,0 +1,27 @@
+.clients {
+  margin: auto;
+  width: 75vw;
+  max-width: $wrapper-width;
+  min-height: 272px;
+  margin-bottom: 60px;
+  @include left-column-flex;
+
+  .caption {
+    margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 120%;
+    color: #212121;
+  }
+  .items {
+    width: 100%;
+    min-height: 166px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .item {
+      width: 278px;
+      height: 68px;
+    }
+  }
+}

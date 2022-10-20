@@ -1,0 +1,138 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+.footer {
+	width: 100vw;
+	min-height: $footer-height;
+	background-color: $footer-background;
+	margin: auto;
+
+	.wrapper {
+		width: 100vw;
+		max-width: $wrapper-width;
+		min-height: 467px;
+		position: relative;
+		top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		box-sizing: border-box;
+
+		@media screen and (max-width: $tablet-width) {
+			top: 0px;
+		}
+	}
+}
+
+.main-footer {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	@media screen and (max-width: $tablet-width) {
+		flex-direction: column;
+		.about {
+			margin-bottom: 30px;
+		}
+	}
+
+	.about {
+		@include left-column-flex;
+		width: 193px;
+		height: 325px;
+
+		.contact-info {
+			@include left-column-flex;
+			height: 152px;
+			color: $light;
+
+			.city,
+			.phone,
+			.address {
+				font-size: $caption-font-size;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 170%;
+			}
+
+			span {
+
+				&.region,
+				&.INN,
+				&.OGRN {
+					font-size: $caption-font-size;
+					opacity: 0.5;
+				}
+			}
+
+			.city {
+				text-decoration: underline;
+			}
+		}
+
+		.social {
+			width: $social-width;
+			height: $social-height;
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				width: 40px;
+				height: 40px;
+			}
+
+			.vk {
+				background-image: url($vk);
+			}
+
+			.telegram {
+				background-image: url($telegram);
+			}
+		}
+	}
+}
+
+.footer-menu {
+	width: $footer-menu-width;
+	display: grid;
+	grid-template-columns: 228px 210px 188px;
+	grid-template-rows: repeat(1, 352px);
+	column-gap: calc(100% * 100% * 107px / ($footer-menu-width * $wrapper-width));
+
+	@media screen and (max-width: $desktop-width) {
+		column-gap: 25px;
+	}
+}
+
+.menu-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	font-size: $caption-font-size;
+	color: $light;
+}
+
+.column-header {
+	margin-bottom: 24px;
+	line-height: 140%;
+	opacity: 0.5;
+}
+
+.column-items {
+	line-height: 170%;
+
+}
+
+.bottom-footer {
+	width: 100vw;
+	max-width: 1200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	height: 35px;
+	font-size: 12px;
+	line-height: 120%;
+	color: $light;
+	opacity: 0.3;
+	border-top: 1px solid;
+}

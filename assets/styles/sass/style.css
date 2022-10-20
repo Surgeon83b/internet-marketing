@@ -1,0 +1,807 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: https://meyerweb.com
+	HTML5 Doctor				:: https://html5doctor.com
+	and the HTML5 Boilerplate	:: https://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+input[type=checkbox] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type=checkbox] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  overflow-x: hidden;
+}
+body a {
+  color: white;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  width: 198.5px;
+  height: 48px;
+  opacity: 1;
+}
+
+.logo-image {
+  width: 43px;
+  height: 48px;
+  background-image: url("../../images/logo.png");
+}
+.logo-image.white {
+  background-image: url("../../images/logo-white.png");
+}
+
+.logo-text {
+  width: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.logo-text1 {
+  width: 128.6px;
+  height: 24.5px;
+  margin-bottom: 4px;
+  background-image: url("../../images/logo1-text.svg");
+}
+.logo-text1.white {
+  background-image: url("../../images/logo1-text-white.svg");
+}
+
+.logo-text2 {
+  width: 124px;
+  height: 8.5px;
+  background-image: url("../../images/logo2-text.svg");
+}
+.logo-text2.white {
+  background-image: url("../../images/logo2-text-white.svg");
+}
+
+.header-section {
+  width: 100%;
+  max-width: 1600px;
+  height: 56.25vw;
+  max-height: 900px;
+  background-image: url("../../images/header-background.png");
+  background-position: top 184px center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 120px;
+}
+
+.header {
+  width: 100%;
+  height: 184px;
+  flex-direction: column;
+  background-color: white;
+}
+
+.header-top {
+  width: 100%;
+  height: 104px;
+}
+.header-top .caption {
+  font-size: 14px;
+  font-weight: 400;
+  color: #212121;
+  margin-left: 39px;
+}
+.header-top .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  height: 52px;
+}
+
+.header-bottom {
+  width: 100%;
+  height: 80px;
+  padding: 28px 0 28px 0;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: rgba(51, 51, 51, 0.1);
+}
+.header-bottom .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+}
+
+.nav-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-menu li {
+  display: inline;
+  font-weight: 500;
+  font-size: 14px;
+  color: #212121;
+  margin-right: 5px;
+}
+.nav-menu li.active span {
+  display: inline-block;
+}
+.nav-menu li:hover {
+  cursor: pointer;
+}
+.nav-menu li:hover span {
+  display: inline-block;
+}
+.nav-menu span {
+  display: none;
+  width: 10px;
+  height: 5px;
+  background-image: url("../../images/arrow.svg");
+  background-size: cover;
+  background-position: right;
+  margin-bottom: 1px;
+}
+
+.header-top,
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-header {
+  width: 1259px;
+  height: 24px;
+  background-color: firebrick;
+  align-items: center;
+}
+
+.search {
+  display: inline;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../images/search.png");
+}
+
+.phone {
+  width: 150px;
+  height: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 410px;
+}
+
+.button-caption {
+  width: 166px;
+  height: 20px;
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: start;
+  flex-direction: column;
+  width: 780px;
+  height: 336px;
+  margin-left: 200px;
+  margin-top: 170px;
+  background-color: transparent;
+  color: white;
+}
+.header-info .caption {
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 110%;
+}
+.header-info .info {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: -22px;
+  line-height: 140%;
+}
+.header-info .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 735px;
+  height: 62px;
+  color: white;
+  font-weight: 500;
+}
+.header-info .buttons .button-caption {
+  color: white;
+  font-size: 18px;
+}
+
+.footer {
+  width: 100vw;
+  min-height: 583px;
+  background-color: #333333;
+  margin: auto;
+}
+.footer .wrapper {
+  width: 100vw;
+  max-width: 1200px;
+  min-height: 467px;
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 980px) {
+  .footer .wrapper {
+    top: 0px;
+  }
+}
+
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 980px) {
+  .main-footer {
+    flex-direction: column;
+  }
+  .main-footer .about {
+    margin-bottom: 30px;
+  }
+}
+.main-footer .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 193px;
+  height: 325px;
+}
+.main-footer .about .contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 152px;
+  color: white;
+}
+.main-footer .about .contact-info .city,
+.main-footer .about .contact-info .phone,
+.main-footer .about .contact-info .address {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+}
+.main-footer .about .contact-info span.region, .main-footer .about .contact-info span.INN, .main-footer .about .contact-info span.OGRN {
+  font-size: 14px;
+  opacity: 0.5;
+}
+.main-footer .about .contact-info .city {
+  text-decoration: underline;
+}
+.main-footer .about .social {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-footer .about .social div {
+  width: 40px;
+  height: 40px;
+}
+.main-footer .about .social .vk {
+  background-image: url("../../images/vk.svg");
+}
+.main-footer .about .social .telegram {
+  background-image: url("../../images/telegram.svg");
+}
+
+.footer-menu {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 228px 210px 188px;
+  grid-template-rows: repeat(1, 352px);
+  -moz-column-gap: 12.7380952381%;
+       column-gap: 12.7380952381%;
+}
+@media screen and (max-width: 1210px) {
+  .footer-menu {
+    -moz-column-gap: 25px;
+         column-gap: 25px;
+  }
+}
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-size: 14px;
+  color: white;
+}
+
+.column-header {
+  margin-bottom: 24px;
+  line-height: 140%;
+  opacity: 0.5;
+}
+
+.column-items {
+  line-height: 170%;
+}
+
+.bottom-footer {
+  width: 100vw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 35px;
+  font-size: 12px;
+  line-height: 120%;
+  color: white;
+  opacity: 0.3;
+  border-top: 1px solid;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  display: flex;
+  border-radius: 100px;
+  border: 1px solid #FF5900;
+  padding: 16px 28px;
+  background-color: white;
+}
+
+.button-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FF5900;
+  font-weight: 500;
+  font-size: 16px;
+  align-items: center;
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("../../images/phone.png");
+}
+
+.call-button {
+  width: 222px;
+}
+
+.button-filled {
+  background-color: #FF5900;
+}
+
+.button-transparent {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #FFFFFF;
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+}
+
+.button1 {
+  width: 362px;
+  padding: 20px 39px;
+}
+.button1 .button-caption {
+  width: 282px;
+}
+
+.button2 {
+  width: 341px;
+  padding: 20px 39px;
+}
+.button2 .button-caption {
+  width: 261px;
+}
+
+.section1 {
+  max-width: 1200px;
+  min-height: 593px;
+  margin: auto;
+  margin-bottom: 120px;
+}
+.section1 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+@media screen and (max-width: 1060px) {
+  .section1 .wrapper {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1060px) and (max-width: 1210px) {
+  .section1 {
+    width: 90vw;
+    max-width: 1200px;
+  }
+}
+.section1 .caption {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 120%;
+  color: #212121;
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 1060px) {
+  .section1 .caption {
+    margin: auto;
+    margin-bottom: 60px;
+  }
+}
+.section1 .caption span {
+  color: #FF5900;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 120%;
+}
+.section1 .main-content {
+  width: 100%;
+  min-height: 487px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1060px) {
+  .section1 .main-content {
+    flex-direction: column;
+    margin-top: 30px;
+    margin: 0;
+    align-items: center;
+  }
+}
+.section1 .main-content .main-item {
+  width: 30%;
+  height: 100%;
+  padding: 40px 32px;
+  color: #FFFFFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1060px) {
+  .section1 .main-content .main-item {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+.section1 .main-content .main-item .wrapper {
+  width: 100%;
+  height: 83.57%;
+  background: none;
+  font-weight: 500;
+  line-height: 140%;
+}
+.section1 .main-content .main-item .wrapper .item-caption {
+  height: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+.section1 .main-content .main-item .wrapper .item1 {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  margin-bottom: 21px;
+}
+.section1 .main-content .main-item .wrapper .item2 {
+  width: 296px;
+  height: 60px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 28px;
+}
+.section1 .main-content .main-item .wrapper .item3 {
+  font-size: 16px;
+  margin-bottom: 36px;
+}
+.section1 .main-content .main-item:nth-child(1) {
+  background-image: url("../../images/item1.png");
+}
+.section1 .main-content .main-item:nth-child(2) {
+  background-image: url("../../images/item2.png");
+}
+.section1 .main-content .main-item:nth-child(3) {
+  background-image: url("../../images/item3.png");
+}
+.section1 .bolder {
+  font-weight: 800;
+  font-size: 18px;
+}
+.section1 .buy {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #FF5900;
+  color: #FF5900;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.clients {
+  margin: auto;
+  width: 75vw;
+  max-width: 1200px;
+  min-height: 272px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.clients .caption {
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 120%;
+  color: #212121;
+}
+.clients .items {
+  width: 100%;
+  min-height: 166px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.clients .items .item {
+  width: 278px;
+  height: 68px;
+}/*# sourceMappingURL=style.css.map */

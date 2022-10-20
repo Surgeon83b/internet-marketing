@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+$font-family: 'Montserrat', sans-serif;
+$font-style: normal;
+
+$headline1-font-size: 68px;
+$headline2-font-size: 38px;
+$headline3-font-size: 18px;
+
+$text-font-size: 16px;
+$caption-font-size: 14px;
+$caption-font-weight: 400;
+
+@mixin font {
+    font-family: $font-family;
+    font-style: $font-style;
+}
