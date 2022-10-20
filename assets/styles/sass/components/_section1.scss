@@ -1,15 +1,35 @@
 .section1 {
-  @include left-column-flex;
-  width: $wrapper-width;
-  height: $section1-height;
+
+
+  max-width: $wrapper-width;
+  min-height: $section1-height;
   margin: auto;
   margin-bottom: 120px;
+
+  .wrapper {
+    @include left-column-flex;
+
+    @media screen and (max-width: $small-desktop-width) {
+      width: 80%;
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: $small-desktop-width) and (max-width: $desktop-width) {
+    width: 90vw;
+    max-width: $wrapper-width;
+  }
 
   .caption {
     font-weight: 700;
     font-size: $headline2-font-size;
     line-height: 120%;
     color: $color-typography;
+    margin-bottom: 60px;
+    @media screen and (max-width: $small-desktop-width) {
+      margin: auto;
+      margin-bottom: 60px;
+    }
 
     span {
       color: $button-default;
@@ -21,15 +41,30 @@
 
   .main-content {
     width: 100%;
-    height: 487px;
+    min-height: 487px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $small-desktop-width) {
+      flex-direction: column;
+      margin-top: 30px;
+      margin: 0;
+      align-items: center;
+    }
 
     .main-item {
       width: 30%;
       height: 100%;
       padding: 40px 32px;
       color: #FFFFFF;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @media screen and (max-width: $small-desktop-width) {
+        width: 80%;
+        margin-bottom: 30px;
+      }
 
       .wrapper {
         width: 100%;

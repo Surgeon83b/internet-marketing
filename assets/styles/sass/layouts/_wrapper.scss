@@ -6,8 +6,16 @@ body {
     width: 100%;
     max-width: $body-width;
     margin: auto;
+    overflow-x: hidden;
+    a {
+        color: $light;
+        text-decoration: none;
+    }
+    
 }
 .wrapper {
-	width: $wrapper-width;
+    width: 100%;
+	max-width: $wrapper-width;
 	margin: auto;
 }
+

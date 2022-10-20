@@ -20,7 +20,6 @@
 	height: $header-height;
 	flex-direction: column;
 	background-color: $header-background;
-
 }
 
 .header-top {
@@ -52,7 +51,6 @@
 
 	.wrapper {
 		@include center-flex;
-		width: $wrapper-width;
 		height: 24px;
 	}
 }
@@ -60,12 +58,33 @@
 .nav-menu {
 	width: 100%;
 	@include center-flex;
-
+	flex-wrap: wrap;
 	li {
 		display: inline;
 		font-weight: 500;
 		font-size: $caption-font-size;
 		color: $color-typography;
+		margin-right: 5px;
+		&.active {
+			span {
+				display: inline-block;
+			}
+		}
+		&:hover {
+			cursor: pointer;
+			span {
+				display: inline-block;
+			}
+		}
+	}
+	span {
+		display: none;
+		width: 10px;
+		height: 5px;
+		background-image: url('../../images/arrow.svg');
+		background-size: cover;
+		background-position: right;
+		margin-bottom: 1px;
 	}
 }
 

@@ -109,6 +109,9 @@ bottomFooter = {
 }
 
 
+///////////////////////////////////////////////
+//////////////////  HEADER  ///////////////////
+///////////////////////////////////////////////
 
 let headerSection = document.createElement('div');
 headerSection.classList.add('header-section');
@@ -200,8 +203,11 @@ headerBottomWrapper.append(navHeader);
 navHeader.append(navMenu);
 for (let i = 0; i < 8; i++) {
 	let menuItem = document.createElement('li');
+	if (i==0) menuItem.classList.add('active');
 	menuItem.innerHTML = navItems[i];
-	navMenu.append(menuItem);
+	let menuArrow = document.createElement('span');
+
+	 navMenu.append(menuItem); menuItem.append(menuArrow);
 }
 let menuItem = document.createElement('li');
 menuItem.classList.add('search');
@@ -215,15 +221,18 @@ const section1Caption = document.createElement('div');
 section1Caption.classList.add('caption');
 const section1MainContent = document.createElement('div');
 section1MainContent.classList.add('main-content');
+const section1Wrapper = document.createElement('div');
+section1Wrapper.classList.add('wrapper');
 
 headerSection.after(section1);
-section1.insertAdjacentHTML("afterbegin", `<div class="caption">
+section1.append(section1Wrapper);
+section1Wrapper.insertAdjacentHTML("afterbegin", `<div class="caption">
     <span>Антикризисные</span>
     DIGITAL-пакеты
 </div>`
 );
 
-section1.append(section1MainContent);
+section1Wrapper.append(section1MainContent);
 
 for (let i = 0; i < 3; i++) {
 	section1MainContent.insertAdjacentHTML("beforeend",
@@ -342,7 +351,7 @@ for (let i = 0; i < 3; i++) {
 	columnItems.classList.add('column-items');
 	for (let j = 0; j < footerNavigation[i].info.length; j++) {
 		columnItems.insertAdjacentHTML("beforeend",
-			`<li><a>${footerNavigation[i].info[j]}</a></li>`
+			`<li><a href="#">${footerNavigation[i].info[j]}</a></li>`
 		)
 	}
 
